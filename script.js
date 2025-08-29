@@ -169,11 +169,9 @@ async function refreshCalendar() {
 // Initialize
 // =======================
 async function initializeApp() {
-  // Show skeleton loader only first time
+ 
   elements.cryptoTable.innerHTML = `<tr><td colspan="5"><div class="skeleton-loader"></div></td></tr>`;
   elements.calendarList.innerHTML = `<tr><td colspan="4"><div class="skeleton-loader"></div></td></tr>`;
-
-  // Fetch crypto and calendar in parallel
   await Promise.all([refreshCrypto(), refreshCalendar()]);
 }
 
