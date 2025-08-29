@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Crypto Dashboard + Economic Calendar</title>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="header-content">
+      <div class="logo">
+        <i class="fas fa-coins logo-icon"></i>
+        <h1>Crypto Pulse Tracker</h1>
+      </div>
+      <div class="header-badges">
+        <div class="badge">
+          <i class="fas fa-bolt"></i>
+          <span>Live Prices</span>
+        </div>
+        <div class="badge">
+          <i class="fas fa-calendar-alt"></i>
+          <span>Economic Events</span>
+        </div>
+        <div class="header-clock">
+          <span id="live-time"></span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Dashboard -->
+  <main>
+    <div class="dashboard-grid">
+      <!-- Crypto Table -->
+      <div class="card">
+        <div class="card-header">
+          <h2 class="card-title">
+            <i class="fas fa-chart-line card-icon"></i>
+            Top Cryptocurrencies
+          </h2>
+          <div class="status">
+            <span class="status-dot"></span>
+            <span id="lastUpdated">Loading...</span>
+          </div>
+        </div>
+        <div class="card-content">
+          <div class="crypto-table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Coin</th>
+                  <th>Price</th>
+                  <th>24h Change</th>
+                  <th>Market Cap</th>
+                </tr>
+              </thead>
+              <tbody id="cryptoTable">
+                <!-- Skeleton loaders -->
+                <tr><td colspan="5"><div class="skeleton-loader"></div></td></tr>
+                <tr><td colspan="5"><div class="skeleton-loader"></div></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- Economic Calendar Section -->
+      <div class="card">
+        <div class="card-header">
+          <h2 class="card-title">
+            <i class="fas fa-calendar-alt card-icon"></i>
+            Economic Calendar
+          </h2>
+          <button class="refresh-btn" id="refreshCalendar">
+            <i class="fas fa-sync-alt"></i>
+            Refresh
+          </button>
+        </div>
+        <div class="card-content">
+          <ul id="calendar-list" class="calendar-list">
+            <!-- Skeleton loaders for events -->
+            <li><div class="skeleton-loader short"></div></li>
+            <li><div class="skeleton-loader short"></div></li>
+            <li><div class="skeleton-loader short"></div></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>Powered by CoinGecko & TradingEconomics | Built with ❤️ for traders</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
