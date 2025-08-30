@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Crypto Dashboard + Economic Calendar</title>
+  <title>Crypto Pulse Tracker - Modern Dashboard</title>
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <!--CSS -->
@@ -14,7 +14,10 @@
   <header>
     <div class="header-content">
       <div class="logo">
-        <i class="fas fa-coins logo-icon"></i>
+        <div class="logo-container">
+          <i class="fas fa-coins logo-icon"></i>
+          <div class="logo-glow"></div>
+        </div>
         <h1>Crypto Pulse Tracker</h1>
       </div>
       <div class="header-badges">
@@ -27,6 +30,7 @@
           <span>Economic Events</span>
         </div>
         <div class="header-clock">
+          <i class="fas fa-clock"></i>
           <span id="live-time"></span>
         </div>
       </div>
@@ -37,7 +41,7 @@
   <main>
     <div class="dashboard-grid">
       <!-- Crypto Table -->
-      <div class="card">
+      <div class="card crypto-card">
         <div class="card-header">
           <h2 class="card-title">
             <i class="fas fa-chart-line card-icon"></i>
@@ -64,14 +68,23 @@
                 <!-- Skeleton loaders -->
                 <tr><td colspan="5"><div class="skeleton-loader"></div></td></tr>
                 <tr><td colspan="5"><div class="skeleton-loader"></div></td></tr>
+                <tr><td colspan="5"><div class="skeleton-loader"></div></td></tr>
+                <tr><td colspan="5"><div class="skeleton-loader"></div></td></tr>
+                <tr><td colspan="5"><div class="skeleton-loader"></div></td></tr>
               </tbody>
             </table>
+          </div>
+        </div>
+        <div class="card-footer">
+          <div class="refresh-info">
+            <i class="fas fa-info-circle"></i>
+            <span>Auto-refreshes every 5 seconds</span>
           </div>
         </div>
       </div>
 
       <!-- Economic Calendar Section -->
-      <div class="card">
+      <div class="card calendar-card">
         <div class="card-header">
           <h2 class="card-title">
             <i class="fas fa-calendar-alt card-icon"></i>
@@ -83,12 +96,58 @@
           </button>
         </div>
         <div class="card-content">
+          <div class="calendar-header">
+            <div class="calendar-stats">
+              <div class="stat-item">
+                <i class="fas fa-calendar-day"></i>
+                <span>Today's Events</span>
+              </div>
+            </div>
+          </div>
           <ul id="calendar-list" class="calendar-list">
             <!-- Skeleton loaders for events -->
             <li><div class="skeleton-loader short"></div></li>
             <li><div class="skeleton-loader short"></div></li>
             <li><div class="skeleton-loader short"></div></li>
+            <li><div class="skeleton-loader short"></div></li>
           </ul>
+        </div>
+        <div class="card-footer">
+          <div class="refresh-info">
+            <i class="fas fa-info-circle"></i>
+            <span>Auto-refreshes every 30 seconds</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Additional Info Section -->
+    <div class="info-section">
+      <div class="info-card">
+        <div class="info-icon">
+          <i class="fas fa-chart-area"></i>
+        </div>
+        <div class="info-content">
+          <h3>Real-time Data</h3>
+          <p>Live cryptocurrency prices and economic events updated in real-time</p>
+        </div>
+      </div>
+      <div class="info-card">
+        <div class="info-icon">
+          <i class="fas fa-mobile-alt"></i>
+        </div>
+        <div class="info-content">
+          <h3>Mobile Optimized</h3>
+          <p>Responsive design that works perfectly on all devices</p>
+        </div>
+      </div>
+      <div class="info-card">
+        <div class="info-icon">
+          <i class="fas fa-shield-alt"></i>
+        </div>
+        <div class="info-content">
+          <h3>Secure & Reliable</h3>
+          <p>Powered by trusted APIs with secure data handling</p>
         </div>
       </div>
     </div>
@@ -96,7 +155,19 @@
 
   <!-- Footer -->
   <footer>
-    <p>Powered by CoinGecko & TradingEconomics | Built for traders</p>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4>Powered by</h4>
+        <div class="api-badges">
+          <span class="api-badge">CoinGecko</span>
+          <span class="api-badge">TradingEconomics</span>
+        </div>
+      </div>
+      <div class="footer-section">
+        <p>Built for traders and crypto enthusiasts</p>
+        <p class="footer-note">Real-time data • Economic insights • Market analysis</p>
+      </div>
+    </div>
   </footer>
 
   <script src="script.js"></script>
